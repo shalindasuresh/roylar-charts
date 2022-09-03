@@ -16,9 +16,9 @@ font-size:25px ; font-family: 'Cooper Black'; color: #FF9633;}
 </style> """, unsafe_allow_html=True)
 st.markdown('<p class="font">Upload your data...</p>', unsafe_allow_html=True) #use st.markdown() with CSS style to create a nice-formatted header/text
 
-uploaded_file = st.file_uploader('',type=['csv']) #Only accepts csv file format
+uploaded_file = st.file_uploader('',type=['xls','xlsx']) #Only accepts csv file format
 if uploaded_file is not None:     
-     df=pd.read_csv(uploaded_file)  #use AgGrid to create a aggrid table that's more visually appealing than plain pandas datafame
+     df=pd.read_excel(uploaded_file)  #use AgGrid to create a aggrid table that's more visually appealing than plain pandas datafame
      # grid_response = AgGrid(            
      #      df,
      #      editable=False, 

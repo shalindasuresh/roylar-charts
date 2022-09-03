@@ -1,5 +1,6 @@
 streamlit-option-menu==0.3.2
 streamlit-aggrid==0.3.3
 raceplotly==0.1.6
+openpyxl==3.0.10
 # git+https://github.com/SjoerdTilmans/sjvisualizer
 # sjvisualizer

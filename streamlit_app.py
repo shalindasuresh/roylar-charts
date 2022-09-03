@@ -19,21 +19,21 @@ st.markdown('<p class="font">Upload your data...</p>', unsafe_allow_html=True) #
 uploaded_file = st.file_uploader('',type=['csv']) #Only accepts csv file format
 if uploaded_file is not None:     
      df=pd.read_csv(uploaded_file)  #use AgGrid to create a aggrid table that's more visually appealing than plain pandas datafame
-     grid_response = AgGrid(            
-          df,
-          editable=False, 
-          height=300, 
-          fit_columns_on_grid_load=True,
-          theme='alpine',
-          width=100,
-          allow_unsafe_jscode=True,
-          )
-     updated = grid_response['data']  
-     df = pd.DataFrame(updated) 
+     # grid_response = AgGrid(            
+     #      df,
+     #      editable=False, 
+     #      height=300, 
+     #      fit_columns_on_grid_load=True,
+     #      theme='alpine',
+     #      width=100,
+     #      allow_unsafe_jscode=True,
+     #      )
+     # updated = grid_response['data']  
+     df = pd.DataFrame(df) 
      
-     raceplot = barplot(df,  item_column='Argentina', value_column='Argentina', time_column='Argentina')
+     # raceplot = barplot(df,  item_column='Argentina', value_column='Argentina', time_column='Argentina')
 
-     raceplot.plot(item_label = 'Top 10 Countries', value_label = 'GDP ($)', frame_duration = 800)
+     # raceplot.plot(item_label = 'Top 10 Countries', value_label = 'GDP ($)', frame_duration = 800)
 
      st.write('---')
      st.markdown('<p class="font">Set Parameters...</p>', unsafe_allow_html=True)
